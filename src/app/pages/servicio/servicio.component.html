@@ -1,0 +1,67 @@
+<!-- <div>
+    <div class="border-0 animated fadeIn ">
+        <a class="image-popup-vertical-fit" [href]="servicioT.imagen[0]"> <img [src]="servicioT.imagen[0]" class="card-img-top" [alt]="servicioT.titulo"></a>
+        <br>
+        <div class="card-body">
+            <h1 class="card-title text-center"> {{ servicioT.titulo }} </h1>
+            <br>
+
+
+            <div *ngFor="let vid of servicioT.video">
+                <video controls>
+                   
+                    <source [src]="vid" type="video/mp4">
+                    Tu navegador no implementa el elemento <code>video</code>.
+                  </video>
+
+                <br>
+            </div>
+            <h2 class="card-title text-center">{{servicioT.tituloActividades}}</h2>
+            <div *ngFor="let actividad of servicioT.actividades">
+                <h3 class=" text-center">{{actividad}}</h3>
+                <br>
+            </div>
+
+        </div>
+</div> -->
+<div class="card bg-dark text-white">
+
+    <a class="image-popup-vertical-fit" [href]="servicioT.imagen[0]"> <img [src]="servicioT.imagen[0]" class="img-fluid" [alt]="servicioT.titulo"></a>
+    <div class="card-img-overlay">
+        <h5 class="card-title">{{ servicioT.titulo }}</h5>
+        <p class="card-text text-dark">{{servicioT.descripcion}}</p>
+        <p class="card-text text-dark">{{servicioT.firma}}</p>
+    </div>
+</div>
+<h1>{{servicioT.clasificacion.titulo}}</h1>
+<div>
+
+    <div *ngFor="let vid of servicioT.video">
+        <video controls *ngIf="vid">
+           
+            <source [src]="vid" type="video/mp4">
+            Tu navegador no implementa el elemento <code>video</code>.
+          </video>
+
+        <br>
+    </div>
+    <div class="card" style="align-content: center">
+        <div class="card-header">
+            {{servicioT.tituloActividades}}
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item" *ngFor="let actividad of servicioT.actividades">{{actividad}}</li>
+
+        </ul>
+    </div>
+</div>
+
+<!-- titulo: string;
+  descripcion: string;
+  firma: string;
+  imagen: string[];
+  tituloActividades: string;
+  actividades: string[];
+  video: string[];
+  id: number;
+  clasificacionid: ClasificacionI; -->
